@@ -4,9 +4,22 @@
   <groupId>com.efx.sec.sdlc</groupId>
   <artifactId>maven-web-app</artifactId>
   <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>maven-web-app Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
+ <properties>
+                <jdk.version>1.8</jdk.version>
+                <spring.version>5.1.2.RELEASE</spring.version>
+                <junit.version>4.11</junit.version>
+                <log4j.version>1.2.17</log4j.version>
+                <sonar.host.url>http:34.201.127.52:9000/</sonar.host.url>
+      <sonar.login>8d8fab94b2b60da3dbbfc7cbebe0c7613d207e7b</sonar.login>
+                <!--  <sonar.password>admin123</sonar.password>  -->
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+                <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        </properties>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -14,6 +27,7 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+
      <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -28,7 +42,22 @@
             <version>2.0</version>
             <scope>provided</scope>
         </dependency>
-  </dependencies>
+</dependencies>
+ <distributionManagement>
+            <repository>
+              <id>nexus</id>
+	      <name> Joeysparkx  Releases Nexus Repository</name>
+	      <url>http://34.229.97.97:8081/repository/swa4-Releases/</url>
+            </repository>
+
+            <snapshotRepository>
+              <id>nexus</id>
+              <name>Joeysparkx  Snapshot Nexus Repository </name>
+              <url>http://34.229.97.97:8081/repository/swa4-snapshot/</url>
+            </snapshotRepository>
+
+        </distributionManagement>
+
   <build>
     <finalName>maven-web-app</finalName>
   </build>
